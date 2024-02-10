@@ -1,0 +1,614 @@
+@charset "UTF-8";
+
+*{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.alert{
+    position :relative;
+    top: 0;
+    z-index: 1;
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    padding: 18px;
+    color: white;
+    font-size: 14px;
+    box-shadow: 5px 5px 5px 680px rgb(180 180 180 / 30%);
+}
+
+.alert a{
+    text-decoration: underline;
+    color: white;
+}
+
+header{
+    position: relative;
+    width: 100%;
+    min-height: 680px;
+    background-size: cover;
+    background-position: center;
+    background-image: url(cafe/img/eyecatch.jpg);
+}
+
+header h1{
+    width: 90%;
+    margin: auto;
+    position: absolute;
+    top: 250px;
+    left: 5%;
+    color: white;
+    font-size: 64px;
+    line-height: 64px;
+    font-weight: bold;
+}
+
+nav{
+    position: relative;
+    top: 0;
+    margin: auto;
+    width: 100%;
+    padding: 0 5%;
+    background-color: transparent;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 15px;
+    color: white;
+    transition: all .5s ease;
+}
+
+.motion{
+    background-color: rgba(0,0,0,0.8);
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    transition: all .5s ease;
+}
+
+.logo{
+    flex: 25%;
+    color: white;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.logo a{
+    color: white;
+}
+
+.logo img{
+    vertical-align: middle;
+}
+
+.g_nav{
+    flex: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    line-height: 50px;
+}
+
+.menu{
+    padding: 0 25px;
+    cursor: pointer;
+}
+
+.menu_click{
+    padding: 0 25px;
+    cursor: pointer;
+}
+
+.g_nav a{
+    color: white;
+    text-decoration: none;
+}
+
+.sign{
+    flex: 25%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+.overlay{
+    z-index: 998;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signin_box{
+    z-index: 999;
+    width: 40%;
+    background-color: white;
+    border-radius: 12px;
+}
+
+.signin_box h2{
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #ccc;
+    margin: 0;
+}
+
+form{
+    margin: 0;
+    padding: 0;
+}
+
+.signin_box dl{
+    padding: 20px;
+    margin: 0;
+}
+
+.signin_box dd{
+    padding: 5px 0;
+    margin: 0;
+}
+
+.signin_box dd input{
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 10px 2.5px;
+    border-radius: 8px;
+    border: 1px solid #aaa;
+}
+
+.signin_box dd button{
+    color: white;
+    background-color: rgb(215,4,102);
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 10px 2.5px;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.signin_box dl.sns{
+    border-top: 1px solid #ccc;
+    margin: 0;
+}
+
+.signin_box .sns dd button{
+    color: black;
+    background-color: white;
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 10px 2.5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.signin_box .sns dd img{
+    width: 1.5rem;
+}
+
+section{
+    margin: 40px 0;
+    padding: 0 5%;
+}
+
+.cafe{
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.cafe .box{
+    padding: 10px 0;
+}
+
+.cafe .info{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.cafe .photo{
+    width: 64px;
+    height: 64px;
+}
+
+.cafe .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.cafe .access{
+    padding: 5px 15px;
+}
+
+.cafe .area{
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.cafe .distance{
+    font-size: 14px;
+    font-weight: 900;
+    margin: 0;
+}
+
+main{
+    margin: 80px 0 60px;
+}
+
+.white{
+    background-color: white;
+    color: black;
+}
+
+.white h2{
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.location{
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    column-gap: 15px;
+}
+
+.location .box{
+    padding: 10px 0;
+}
+
+.location .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.location .text{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.goto{
+    margin-top: 40px;
+    opacity: 0.9;
+    position: relative;
+}
+
+.goto .text{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    background-color: rgb(255,255,255,0.3);
+    padding: 10px;
+}
+
+.goto .text h3{
+    font-size: 42px;
+    font-weight: bold;
+    color: black;
+    margin: 0;
+}
+
+.goto .text p{
+    font-size: 18px;
+    font-weight: 100;
+    color: black;
+    margin: 0;
+}
+
+.goto img{
+    width: 100%;
+    border-radius: 16px;
+}
+
+.black{
+    background-color: black;
+    color: white;
+    padding: 40px 5%;
+}
+
+.black h2{
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.black p{
+    margin: 0;
+}
+
+.black{
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.experience{
+    margin: 15px auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 15px;
+}
+
+.experience .box{
+    padding: 10px 0;
+}
+
+.experience .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.experience .text{
+    font-size: 18px;
+    font-size: bold;
+    margin: 0;
+}
+
+.experience p{
+    font-size: 14px;
+    font-weight: 100;
+    margin: 0;
+}
+
+.host{
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 15px;
+}
+
+.host .box{
+    padding: 10px 0;
+}
+
+.host .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.host .text{
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+footer{
+    border-top: 1px solid #ddd;
+    background-color: #f7f7f7;
+    padding: 4% 0;
+}
+
+.footer_wrapper{
+    width: 90%;
+    margin: auto;
+    font-size: 0.9rem;
+}
+
+.footer_nav{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.footer_nav .aitem{
+    flex: auto;
+}
+
+.aitem h2{
+    font-weight: bold;
+    font-size: 100%;
+    margin: 0;
+}
+
+.aitem ul{
+    padding: 0;
+}
+
+.aitem li{
+    margin: 1rem 0;
+    list-style-type: none;
+}
+
+.aitem a{
+    color: #333;
+    text-decoration: none;
+}
+
+.reserved{
+    padding-top: 2%;
+    color: #333;
+    border-top: 1px solid #ccc;
+}
+
+.reserved p{
+    margin: 0;
+}
+
+.reserved_menu .menu{
+    padding: 0;
+}
+
+.jump{
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    height: 3rem;
+    line-height: 3rem;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    background-color: black;
+    padding: 0 10px;
+    transform: translateY(30px);
+    transition: opacity .2s, visibility .2s, transform .2s;  
+}
+
+.fadein{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);  
+}
+
+header.contact{
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    background-image: none;
+}
+
+header.contact nav.motion{
+    position: relative;
+}
+
+.contact_box{
+    width: 70%;
+    margin: 5% auto;
+    border-radius: 16px;
+    border: 1px solid #ccc;
+}
+
+.contact_box h2{
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #ccc;
+    margin: 0;
+}
+
+.contact_box form{
+    margin: 3%;
+}
+
+.contact_box h3{
+    background: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#eaeaea));
+    border-top: 1px solid #666;
+    border-bottom: 1px solid #666;
+    padding: 1%;
+    margin: 1% 0;
+    font-weight: normal;
+    font-size: 100%;
+}
+
+.contact_box p{
+    margin: 0;
+    font-size: 14px;
+}
+
+.contact_box .required{
+    color: red;
+}
+
+.contact_box dl{
+    margin: 2% 0;
+}
+
+.contact_box dd{
+    padding: 0.5% 0 1%;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.contact_box input{
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 10px 2.5px;
+    border-radius: 8px;
+    border: 1px solid #aaa;
+}
+
+.contact_box textarea{
+    resize: none;
+    width: 100%;
+    height: 33vh;
+    font-size: 1.2rem;
+    padding: 10px 2.5px;
+    border-radius: 8px;
+    border: 1px solid #aaa;
+    vertical-align: middle;
+}
+
+.contact_box button{
+    color: white;
+    background-color: rgb(215,4,102);
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 10px 2.5px;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.contact_box .confirm dt{
+    margin-top: 1rem;
+    border-bottom: 1px solid #ccc;
+}
+
+.contact_box .confirm dd{
+    padding: 1%;
+}
+
+.contact_box .confirm dd.confirm_btn{
+    padding: 1% 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact_box .confirm dd.confirm_btn button{
+    margin-right: 10px;
+}
+
+.contact_box .confirm dd.confirm_btn a{
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+    margin-left: 10px;
+    background-color: transparent;
+    border: 2px solid #066;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #066;
+    text-decoration: none;
+}
+
+.complete_msg{
+    padding: 3%;
+}
+
+.complete_msg a{
+    display: block;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+
+table{
+    border-collapse: collapse;
+    width: 70%;
+    margin: 5% auto;
+}
+
+td{
+    empty-cells: hide;
+}
