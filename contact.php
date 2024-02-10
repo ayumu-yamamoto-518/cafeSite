@@ -28,6 +28,51 @@
     $error['email'] = filter_input(INPUT_POST,'email');
     $error['body'] = filter_input(INPUT_POST,'body');
 
+    if($_SERVER['REQUEST_METHOD'] === 'POST'){
+
+        $name = filter_input(INPUT_POST,'name');
+        $kana = filter_input(INPUT_POST,'kana');
+        $tel = filter_input(INPUT_POST,'tel');
+        $email = filter_input(INPUT_POST,'email');
+        $body = filter_input(INPUT_POST,'body');    
+
+        $_SESSION['name'] = $name;
+        $_SESSION['kana'] = $kana;
+        $_SESSION['tel'] = $tel;
+        $_SESSION['email'] = $email;
+        $_SESSION['body'] = $body;
+    
+        if(!isset($_POST['name']) || $_POST['name'] === "" || mb_strlen($_POST['name']) > 10){
+            $error['name'] = "氏名は必須入力です。10文字以内でご入力ください。";
+        }else{
+            $error['name'] = "";
+        }
+        
+        if(!isset($_POST['kana']) || $_POST['kana'] === "" || mb_strlen($_POST['kana']) > 10){
+            $error['kana'] = "フリガナは必須入力です。10文字以内でご入力ください。";
+        }else{
+            $error['kana'] = "";
+        }
+        
+        if(isset($_POST['tel']) && $_POST['tel'] != "" && !preg_match("/^[0-9]+$/", $_POST['tel'])){
+            $error['tel'] = "電話番号は0-9の数字のみでご入力ください。";
+        }else{
+            $error['tel'] = "";
+        }
+        
+        if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+            $error['email'] = "メールアドレスは正しくご入力ください。";
+        }else{
+            $error['email'] = "";
+        }
+        
+        if(!isset($_POST['body']) || $_POST['body'] === ""){
+            $error['body'] = "お問い合わせ内容は必須入力です。";
+        }else{
+            $error['body'] = "";
+        }
+    }
+
     //データベース接続確認
     try{
         require('./dbconnect.php');
