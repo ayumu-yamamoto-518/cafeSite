@@ -1,6 +1,26 @@
 <?php
     require('./header.php');
 
+    session_start();
+
+    //空チェック(変数が空かどうか)
+    if(!isset($_SESSION['name']) || $_SESSION['name'] === ""){
+        $_SESSION['name'] = "";
+    }
+    if(!isset($_SESSION['kana']) || $_SESSION['kana'] === ""){
+        $_SESSION['kana'] = "";
+    }
+    if(!isset($_SESSION['tel']) || $_SESSION['tel'] === ""){
+        $_SESSION['tel'] = "";
+    }
+    if(!isset($_SESSION['email']) || $_SESSION['email'] === ""){
+        $_SESSION['email'] = "";
+    }
+    if(!isset($_SESSION['body']) || $_SESSION['body'] === ""){
+        $_SESSION['body'] = "";
+    }
+
+
     //データベース接続確認
     try{
         require('./dbconnect.php');
@@ -66,7 +86,7 @@
                         <div style="color: red"></div>
 
                         <dd>
-                            <input type="text" name="name" id="name" placeholder="山田太郎" value="">
+                            <input type="text" name="name" id="name" placeholder="山田太郎" value="<?php echo htmlspecialchars($_SESSION['name'], ENT_QUOTES, "UTF-8"); ?>">
                         </dd>
 
                         <dt>
@@ -76,7 +96,7 @@
                         <div style="color: red"></div>
 
                         <dd>
-                            <input type="text" name="kana" id="kana" placeholder="ヤマダタロウ" value="">
+                            <input type="text" name="kana" id="kana" placeholder="ヤマダタロウ" value="<?php echo htmlspecialchars($_SESSION['kana'], ENT_QUOTES, "UTF-8"); ?>">
                         </dd>
 
                         <dt>
@@ -86,7 +106,7 @@
                         <div style="color: red"></div>
 
                         <dd>
-                            <input type="text" name="tel" id="tel" placeholder="09012345678" value="">
+                            <input type="text" name="tel" id="tel" placeholder="09012345678" value="<?php echo $_SESSION['tel'] ?>">
                         </dd>
 
                         <dt>
@@ -96,7 +116,7 @@
                         <div style="color: red"></div>
 
                         <dd>
-                            <input type="text" name="email" id="email" placeholder="test@test.co.jp" value="">
+                            <input type="text" name="email" id="email" placeholder="test@test.co.jp" value="<?php echo $_SESSION['email'] ?>">
                         </dd>
                     </dl>
 
@@ -108,7 +128,7 @@
 
                     <dl class="body">
                         <dd>
-                            <textarea cols="50" rows="8" wrap="hard" name="body" id="body"></textarea>
+                            <textarea cols="50" rows="8" wrap="hard" name="body" id="body"><?php echo htmlspecialchars($_SESSION['body'], ENT_QUOTES, "UTF-8");?></textarea>
                         </dd>
                         <dd>
                             <button type="submit" name="btn_confirm" id="btn_confirm">送　信</button>
@@ -128,6 +148,7 @@
                 <th>お問い合わせ内容</th>
                 <th>送信日時</th>
             </tr>
+        </table>
 
         <?php
             require('./footer.php');
