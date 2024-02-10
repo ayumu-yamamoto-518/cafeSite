@@ -71,6 +71,21 @@
         }else{
             $error['body'] = "";
         }
+
+        if(isset($_POST['name']) && $_POST['name'] != "" && mb_strlen($_POST['name']) < 10 && 
+            isset($_POST['kana']) && $_POST['kana'] != "" && mb_strlen($_POST['kana']) < 10 && 
+            filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) && isset($_POST['body']) && 
+            $_POST['body'] != "" && $_POST['tel'] === "") {
+            header('Location: ./confirm.php');
+        }
+
+        if(isset($_POST['name']) && $_POST['name'] != "" && mb_strlen($_POST['name']) < 10 && 
+            isset($_POST['kana']) && $_POST['kana'] != "" && mb_strlen($_POST['kana']) < 10 && 
+            filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) && 
+            isset($_POST['body']) && $_POST['body'] != "" && 
+            preg_match("/^[0-9]+$/", $_POST['tel'])) {
+            header('Location: ./confirm.php');
+        }
     }
 
     //データベース接続確認
