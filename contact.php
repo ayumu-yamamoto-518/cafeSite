@@ -3,24 +3,6 @@
 
     session_start();
 
-    //空チェック(変数が空かどうか)
-    if(!isset($_SESSION['name']) || $_SESSION['name'] === ""){
-        $_SESSION['name'] = "";
-    }
-    if(!isset($_SESSION['kana']) || $_SESSION['kana'] === ""){
-        $_SESSION['kana'] = "";
-    }
-    if(!isset($_SESSION['tel']) || $_SESSION['tel'] === ""){
-        $_SESSION['tel'] = "";
-    }
-    if(!isset($_SESSION['email']) || $_SESSION['email'] === ""){
-        $_SESSION['email'] = "";
-    }
-    if(!isset($_SESSION['body']) || $_SESSION['body'] === ""){
-        $_SESSION['body'] = "";
-    }
-
-
     //データベース接続確認
     try{
         require('./dbconnect.php');
