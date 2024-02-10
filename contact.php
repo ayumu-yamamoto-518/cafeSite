@@ -82,7 +82,7 @@
                             <label for="name">氏名</label><span class="required">*</span>
                         </dt>
 
-                        <div style="color: red"></div>
+                        <div style="color: red"><?php echo $error['name']; ?></div>
 
                         <dd>
                             <input type="text" name="name" id="name" placeholder="山田太郎" value="<?php echo htmlspecialchars($_SESSION['name'], ENT_QUOTES, "UTF-8"); ?>">
@@ -92,7 +92,7 @@
                             <label for="kana">フリガナ</label><span class="required">*</span>
                         </dt>
 
-                        <div style="color: red"></div>
+                        <div style="color: red"><?php echo $error['kana']; ?></div>
 
                         <dd>
                             <input type="text" name="kana" id="kana" placeholder="ヤマダタロウ" value="<?php echo htmlspecialchars($_SESSION['kana'], ENT_QUOTES, "UTF-8"); ?>">
@@ -102,7 +102,7 @@
                             <label for="tel">電話番号</label>
                         </dt>
 
-                        <div style="color: red"></div>
+                        <div style="color: red"><?php echo $error['tel']; ?></div>
 
                         <dd>
                             <input type="text" name="tel" id="tel" placeholder="09012345678" value="<?php echo $_SESSION['tel'] ?>">
@@ -112,7 +112,7 @@
                             <label for="email">メールアドレス</label><span class="required">*</span>
                         </dt>
 
-                        <div style="color: red"></div>
+                        <div style="color: red"><?php echo $error['email']; ?></div>
 
                         <dd>
                             <input type="text" name="email" id="email" placeholder="test@test.co.jp" value="<?php echo $_SESSION['email'] ?>">
@@ -123,7 +123,7 @@
                         <label for="body">お問い合わせ内容をご記入ください<span class="required">*</span></label>
                     </h3>
 
-                    <div style="color: red"></div>
+                    <div style="color: red"><?php echo $error['body']; ?></div>
 
                     <dl class="body">
                         <dd>
