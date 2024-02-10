@@ -20,6 +20,14 @@
         $_SESSION['body'] = "";
     }
 
+    $error = [];
+
+    $error['name'] = filter_input(INPUT_POST,'name');
+    $error['kana'] = filter_input(INPUT_POST,'kana');
+    $error['tel'] = filter_input(INPUT_POST,'tel');
+    $error['email'] = filter_input(INPUT_POST,'email');
+    $error['body'] = filter_input(INPUT_POST,'body');
+
     //データベース接続確認
     try{
         require('./dbconnect.php');
