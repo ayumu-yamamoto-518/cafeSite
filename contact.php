@@ -214,6 +214,20 @@
                 <th>お問い合わせ内容</th>
                 <th>送信日時</th>
             </tr>
+
+            <?php foreach($contacts as $contact): ?>
+            <tr>
+                <td><?php echo $contact['id'];?></td>
+                <td><?php echo htmlspecialchars($contact['name']);?></td>
+                <td><?php echo htmlspecialchars($contact['kana']);?></td>
+                <td><?php echo $contact['tel'];?></td>
+                <td><?php echo $contact['email'];?></td>
+                <td><?php echo nl2br(htmlspecialchars($contact['body']));?></td>
+                <td><?php echo htmlspecialchars($contact['created_at']);?></td>
+                <td><a href="edit.php?id=<?php echo $contact['id'];?>">編集</a></td>
+                <td><a id= "delete" href="delete.php?id=<?php echo $contact['id'];?>">削除</a></td>
+            </tr>
+            <?php endforeach; ?>
         </table>
 
         <?php
