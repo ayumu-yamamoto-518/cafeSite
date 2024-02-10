@@ -109,8 +109,7 @@
    
         echo "エラー;". $e->getMessage() . "<br/>";
         die();
-    }  
-
+    }
 ?>
 
     <body>
